@@ -31,6 +31,15 @@ async function waitFor(test){for(let k=0;k<200;k++){if(test())return;await delay
  ids.get('resetFte').onclick();ids.get('managerFte').value=2.5;ids.get('managerFte').events.input();
  await waitFor(()=>ids.get('scenarioStatus').textContent.includes('SLA recalculated'));
  assert(ids.get('scenarioSummary').innerHTML.includes('17.5 FTE'));assert(ids.get('result').innerHTML.includes('17.5 FTE'));assert(ids.get('annualSummary').textContent.includes('simulated years'));assert(ids.get('annualMetrics').innerHTML.includes('Open RFP'));
- ids.get('objective').value='sla';ids.get('objective').events.input();assert.equal(ids.get('budgetField').hidden,false);assert.equal(ids.get('simulate').disabled,true);
+ const demand=controls.find(x=>x['data-key']==='annualByType');demand.value=360;demand.events.input();
+ assert.equal(ids.get('simulate').disabled,false,'Demand edits must allow SLA recalculation');assert.equal(ids.get('resetFte').disabled,true,'Old recommendation must not be restored after input changes');
+ ids.get('simulate').onclick();await waitFor(()=>ids.get('scenarioStatus').textContent.includes('SLA recalculated'));
+ const changedConfig={...Model.defaults,annualByType:[360,...Model.defaults.annualByType.slice(1)],fteByRole:[2.5,9,6]};
+ const changedResult=Model.evaluate(changedConfig,0,0);
+ assert(ids.get('result').innerHTML.includes(Model.slaScore(changedResult).toFixed(1)+'%'),'SLA must use edited demand, not the loaded example');
+ assert(!ids.get('result').innerHTML.includes('Recommendation retained'),'Old recommendation must not be compared with new demand');
+ ids.get('managerFte').value=3;ids.get('managerFte').events.input();await waitFor(()=>ids.get('scenarioStatus').textContent.includes('SLA recalculated'));
+ const followingResult=Model.evaluate({...changedConfig,fteByRole:[3,9,6]},0,0);assert(ids.get('result').innerHTML.includes(Model.slaScore(followingResult).toFixed(1)+'%'),'Subsequent FTE edits must retain the new demand');
+ ids.get('objective').value='sla';ids.get('objective').events.input();assert.equal(ids.get('budgetField').hidden,false);assert.equal(ids.get('simulate').disabled,false);
  console.log('PASS: automatic FTE recalculation runs real async simulation, changes SLA and salary, supports fractional FTEs, blocks >50% seniors, and resets.');
 })().catch(e=>{console.error(e);process.exitCode=1;});
