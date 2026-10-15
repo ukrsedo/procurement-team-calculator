@@ -1,0 +1,195 @@
+{
+  "trials": 60,
+  "results": [
+    {
+      "name": "separate: baseline",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 96.60051451672179,
+      "RFP": 96.60051451672179,
+      "yearlyTargetChance": 76.66666666666667,
+      "yearlyInterval": [
+        64.563488659608,
+        85.56056838156894
+      ],
+      "annualP10": 92.090395480226,
+      "annualP90": 99.46524064171123,
+      "backlog": 81.78333333333333
+    },
+    {
+      "name": "separate: minus one senior",
+      "fte": [
+        3,
+        5,
+        6
+      ],
+      "cost": 530000,
+      "lowestSLA": 75.46857772877618,
+      "RFP": 75.46857772877618,
+      "yearlyTargetChance": 3.3333333333333335,
+      "yearlyInterval": [
+        0.9189126490150246,
+        11.363987528925378
+      ],
+      "annualP10": 61.170212765957444,
+      "annualP90": 90.69767441860465,
+      "backlog": 101.68333333333334
+    },
+    {
+      "name": "pooled: baseline",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 98.9066519661889,
+      "RFP": 98.9066519661889,
+      "yearlyTargetChance": 96.66666666666667,
+      "yearlyInterval": [
+        88.63601247107462,
+        99.08108735098497
+      ],
+      "annualP10": 97.19101123595506,
+      "annualP90": 100,
+      "backlog": 79.9
+    },
+    {
+      "name": "pooled: minus one senior",
+      "fte": [
+        3,
+        5,
+        6
+      ],
+      "cost": 530000,
+      "lowestSLA": 96.83020948180815,
+      "RFP": 96.83020948180815,
+      "yearlyTargetChance": 80,
+      "yearlyInterval": [
+        68.21795390818299,
+        88.17161026314105
+      ],
+      "annualP10": 92.13483146067416,
+      "annualP90": 100,
+      "backlog": 82.18333333333334
+    },
+    {
+      "name": "separate: 20% more demand",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 86.1805717846849,
+      "RFP": 86.1805717846849,
+      "yearlyTargetChance": 5,
+      "yearlyInterval": [
+        1.714919117914121,
+        13.700734625099836
+      ],
+      "annualP10": 72.34042553191489,
+      "annualP90": 93.06930693069307,
+      "backlog": 106.11666666666666
+    },
+    {
+      "name": "separate: 20% more labour effort",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 87.45865490628445,
+      "RFP": 87.45865490628445,
+      "yearlyTargetChance": 8.333333333333334,
+      "yearlyInterval": [
+        3.611992405048589,
+        18.06916846811248
+      ],
+      "annualP10": 77.09251101321586,
+      "annualP90": 94.56521739130434,
+      "backlog": 90.43333333333334
+    },
+    {
+      "name": "separate: 20% longer external waits",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 87.30246233002572,
+      "RFP": 87.30246233002572,
+      "yearlyTargetChance": 13.333333333333334,
+      "yearlyInterval": [
+        6.914026978309641,
+        24.165394590072104
+      ],
+      "annualP10": 75.53191489361703,
+      "annualP90": 95.48022598870057,
+      "backlog": 95.36666666666666
+    },
+    {
+      "name": "separate: turnover doubles to 10%",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 94.51488423373759,
+      "RFP": 94.51488423373759,
+      "yearlyTargetChance": 61.666666666666664,
+      "yearlyInterval": [
+        49.01736454040315,
+        72.91191041511176
+      ],
+      "annualP10": 88.46153846153847,
+      "annualP90": 98.95287958115183,
+      "backlog": 83.13333333333334
+    },
+    {
+      "name": "separate: incorrectly stopping future arrivals",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 96.77508269018743,
+      "RFP": 96.77508269018743,
+      "yearlyTargetChance": 76.66666666666667,
+      "yearlyInterval": [
+        64.563488659608,
+        85.56056838156894
+      ],
+      "annualP10": 92.090395480226,
+      "annualP90": 99.47643979057591,
+      "backlog": 81.78333333333333
+    },
+    {
+      "name": "separate: independent seed set",
+      "fte": [
+        3,
+        6,
+        6
+      ],
+      "cost": 570000,
+      "lowestSLA": 97.28188557308496,
+      "RFP": 97.28188557308496,
+      "yearlyTargetChance": 73.33333333333333,
+      "yearlyInterval": [
+        60.99104639810865,
+        82.86750351292115
+      ],
+      "annualP10": 93.75,
+      "annualP90": 100,
+      "backlog": 80.06666666666666
+    }
+  ]
+}

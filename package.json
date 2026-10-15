@@ -1,0 +1,12 @@
+{
+  "name": "procurement-team-calculator",
+  "version": "0.6.0",
+  "private": true,
+  "description": "Good Spending procurement staffing and SLA scenario calculator",
+  "scripts": {
+    "test": "node check-model.cjs && node check-ui.cjs && node audit/check-audit.cjs",
+    "audit:report": "node audit/publish-report.cjs",
+    "audit:sensitivity": "node audit/sensitivity.cjs"
+  },
+  "engines": {"node": ">=20"}
+}
